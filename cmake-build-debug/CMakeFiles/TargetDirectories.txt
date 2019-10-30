@@ -1,0 +1,3 @@
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/AlgorytmyiStrukturyDanych.dir
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/edit_cache.dir

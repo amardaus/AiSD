@@ -1,0 +1,113 @@
+//
+// Created by olcia on 14.10.2019.
+//
+
+#ifndef ALGORYTMYISTRUKTURYDANYCH_SORTEDLINKEDLIST_HXX
+#define ALGORYTMYISTRUKTURYDANYCH_SORTEDLINKEDLIST_H
+using position_t = int;
+//The constexpr specifier declares that it is possible to evaluate the value of the function or variable at compile time.
+//https://stackoverflow.com/questions/14116003/difference-between-constexpr-and-const
+
+template <typename T>
+class SortedLinkedList {
+    struct Node{
+        T item;
+        Node* prev;
+        Node* next;
+    };
+
+    Node* first;    //head
+    Node* last;     //tail
+    int length;
+
+public:
+    SortedLinkedList(){
+        first = NULL;
+        last = NULL;
+    }
+
+    void push(T item);
+    T pop();
+    T erase(position_t index);
+    position_t find(T item);
+    int size();
+    void remove(T item);
+    static SortedLinkedList merge(const SortedLinkedList& a, const SortedLinkedList& b);
+    void unique();
+    void print();
+};
+
+template<typename T>
+void SortedLinkedList<T>::push(T item) {
+    Node* node = new Node;
+    node->item = item;
+
+    if(first == NULL){
+        first = node;
+        last = node;
+    }
+    else{
+        last->next = node;
+        node->prev = last;
+        node->next = NULL;
+        last = node;
+    }
+    length++;
+}
+
+template<typename T>
+T SortedLinkedList<T>::pop() {
+    //Node* tmp = last;
+    T value = last->item;
+
+    //tmp->item = 0;
+    //tmp->prev = NULL;
+    //tmp->next = NULL;
+
+    last = last->prev;
+    last->next = NULL;
+    length--;
+    //delete tmp;
+    return value;
+}
+
+template<typename T>
+T SortedLinkedList<T>::erase(position_t index) {
+    return nullptr;
+}
+
+template<typename T>
+position_t SortedLinkedList<T>::find(T item) {
+    return 0;
+}
+
+template<typename T>
+int SortedLinkedList<T>::size() {
+    return 0;
+}
+
+template<typename T>
+void SortedLinkedList<T>::remove(T item) {
+
+}
+
+template<typename T>
+SortedLinkedList<T> SortedLinkedList<T>::merge(const SortedLinkedList &a, const SortedLinkedList &b) {
+    return SortedLinkedList();
+}
+
+template<typename T>
+void SortedLinkedList<T>::unique() {
+
+}
+
+template<typename T>
+void SortedLinkedList<T>::print() {
+    Node* tmp = first;
+    while(tmp){
+        std::cout << tmp->item << std::endl;
+        tmp = tmp->next;
+    }
+}
+
+#endif //ALGORYTMYISTRUKTURYDANYCH_SortedLinkedList_H

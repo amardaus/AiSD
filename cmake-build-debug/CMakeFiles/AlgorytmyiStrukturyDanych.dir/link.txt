@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/AlgorytmyiStrukturyDanych.dir/main.cpp.o CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.o CMakeFiles/AlgorytmyiStrukturyDanych.dir/sortAddRemove.cxx.o  -o AlgorytmyiStrukturyDanych 
