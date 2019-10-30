@@ -6,10 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/sortAddRemove.cxx
-random
--
-chrono
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/main.cpp
+iostream
 -
 sortedArrayList.hxx
 /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/sortedArrayList.hxx

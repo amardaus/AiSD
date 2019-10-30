@@ -8,7 +8,7 @@
 
 constexpr int n = 50000;
 
-int main(){
+/*int main(){
     SortedArrayList<int>* sortedArrayList = new SortedArrayList<int>();
     SortedLinkedList<int>* sortedLinkedList = new SortedLinkedList<int>();
 
@@ -38,4 +38,4 @@ int main(){
     end = std::chrono::high_resolution_clock::now();
     time = end - start;
     std::cout << "Elapsed time: " << time.count() << std::endl;
-}
+}*/
