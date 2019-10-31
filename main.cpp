@@ -43,7 +43,7 @@ int main() {
 
 
     //std::cout << "found: " << sortedLinkedList->find(500).currentNode->item << std::endl;
-    sortedLinkedList->erase(sortedLinkedList->find(300));
+    //sortedLinkedList->erase(sortedLinkedList->find(300));
     sortedLinkedList->print();
 
 

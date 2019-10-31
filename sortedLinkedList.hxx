@@ -63,14 +63,24 @@ class SortedLinkedList {
         Node* node = new Node();
         node->item = item;
 
-        node->prev = it.currentNode->prev;
-        node->next = it.currentNode;
         it.currentNode->prev->next = node;
         it.currentNode->prev = node;
+        node->prev = it.currentNode->prev;
+        node->next = it.currentNode;
 
-        //czemu to nie dziala?
+        return it;
     }
 
+    Iterator erase_it(Iterator it){
+        Node* node = it.currentNode;
+
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
+
+        delete node;
+        it++;
+        return it;
+    }
 
 
 
@@ -207,18 +217,25 @@ template<typename T>
 void SortedLinkedList<T>::print() {
     Iterator it = begin();
     while(it != end()){
-        std::cout << it.currentNode->item << std::endl;
+        std::cout << it.currentNode->item << " ";
         it++;
     }
-    /*it++;
-    it++;
-    it = begin();
     std::cout << std::endl;
+
+
+    /*it=begin();
+    it++;
+    erase_it(it);
+    length--;*/
+
+    /*it=begin();
+    it++;
     insert(it, 500);
-    length++;
-    it = begin();
+    length++;*/
+
+    /*it = begin();
     while(it != end()){
-        std::cout << it.currentNode->item << std::endl;
+        std::cout << it.currentNode->item << " ";
         it++;
     }*/
 }
@@ -247,10 +264,6 @@ void SortedLinkedList<T>::remove(T item) {
             else if(it == guard->next){
                 std::cout << "koniec!";
                 it++;
-
-
-
-
             }
             else{
                 //std::cout << "srodek" << std::endl;
