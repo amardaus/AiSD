@@ -55,7 +55,6 @@ class SortedLinkedList {
         return Iterator(guard->prev);
     }
     Iterator end(){
-        //return Iterator(guard->next);
         return Iterator(guard);
     }
 
@@ -72,18 +71,28 @@ class SortedLinkedList {
     }
 
     Iterator erase_it(Iterator it){
-        Node* node = it.currentNode;
+        Node* node;
 
-        node->prev->next = node->next;
-        node->next->prev = node->prev;
-
-        delete node;
+        if(it == begin()){
+            node = guard->prev;
+            guard->prev = node->next;
+        }
+        else if(it == end().currentNode->next){
+            node = guard->next;
+            node->prev->next = guard;
+            guard->next = node->prev;
+        }
+        else{
+            node = it.currentNode;
+            node->prev->next = node->next;
+            node->next->prev = node->prev;
+        }
         it++;
+        length--;
+        delete node;
+
         return it;
     }
-
-
-
 
 private:
     Node* guard;
@@ -115,8 +124,8 @@ public:
     }
     int size();
     void remove(T item);
-    /*static SortedLinkedList merge(const SortedLinkedList& a, const SortedLinkedList& b);
-    void unique();*/
+    /*static SortedLinkedList merge(const SortedLinkedList& a, const SortedLinkedList& b);*/
+    void unique();
     void print();
 };
 
@@ -289,6 +298,18 @@ void SortedLinkedList<T>::remove(T item) {
         else{
             it++;
         }
+    }
+}
+
+template<typename T>
+void SortedLinkedList<T>::unique() {
+    Iterator it = begin();
+    while(it != end().currentNode->next){
+        if(it.currentNode->item == it.currentNode->next->item){
+            //std::cout << "znaleziono duplikat: " << it.currentNode->item << std::endl;
+            erase_it(it.currentNode->next);
+        }
+        it++;
     }
 }
 

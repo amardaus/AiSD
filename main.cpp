@@ -37,8 +37,12 @@ int main() {
     sortedLinkedList->push(100);
     sortedLinkedList->push(200);
     sortedLinkedList->push(500);
+    sortedLinkedList->push(500);
+    sortedLinkedList->push(500);
+    sortedLinkedList->push(100);
     sortedLinkedList->push(250);
     sortedLinkedList->push(400);
+    sortedLinkedList->unique();
 
 
 
