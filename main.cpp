@@ -40,10 +40,10 @@ int main() {
     sortedLinkedList->push(250);
     sortedLinkedList->push(400);
 
-    sortedLinkedList->remove(200);
 
-    //std::cout << " " << sortedLinkedList->find(400).currentNode->item;
-    //sortedLinkedList->erase(sortedLinkedList->find(200));
+
+    //std::cout << "found: " << sortedLinkedList->find(500).currentNode->item << std::endl;
+    sortedLinkedList->erase(sortedLinkedList->find(300));
     sortedLinkedList->print();
 
 

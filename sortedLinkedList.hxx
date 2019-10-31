@@ -125,7 +125,7 @@ void SortedLinkedList<T>::push(T item) {
         guard->next = node;
         node->prev = guard;
         node->next = guard;
-        std::cout << "[empty]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
+        //std::cout << "[empty]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
     }
 
     else if (guard->prev->item >= item)  //na poczatku listy
@@ -134,7 +134,7 @@ void SortedLinkedList<T>::push(T item) {
         node->prev = guard;
         node->next = it.currentNode;
         guard->prev = node;
-        std::cout << "[begin]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
+        //std::cout << "[begin]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
     }
 
     else
@@ -148,14 +148,14 @@ void SortedLinkedList<T>::push(T item) {
             node->next = guard;
             node->prev = it.currentNode;
             guard->next = node;
-            std::cout << "[end]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
+            //std::cout << "[end]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
         }
         else{
             node->next = it.currentNode->next;
             node->prev = it.currentNode;
             it.currentNode->next->prev = node;
             it.currentNode->next = node;
-            std::cout << "[mid]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
+            //std::cout << "[mid]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
         }
     }
     length++;
@@ -181,17 +181,24 @@ T SortedLinkedList<T>::pop() {
 
 template<typename T>
 T SortedLinkedList<T>::erase(Iterator it) {
-    /*it = begin();
-    while(it){
-        if(it.currentNode == index){
-            std::cout << "znaleziono!";
-        }
-        it++;
-        if(it == end()){
-            break;
-        }
-        it = begin();
-    }*/
+    Node* node;
+
+    if(it == begin()){
+        node = guard->prev;
+        guard->prev = node->next;
+    }
+    else if(it == end().currentNode->next){
+        node = guard->next;
+        node->prev->next = guard;
+        guard->next = node->prev;
+    }
+    else{
+        node = it.currentNode;
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
+    }
+    length--;
+    delete node;
 
     return -1;
 }
@@ -200,7 +207,7 @@ template<typename T>
 void SortedLinkedList<T>::print() {
     Iterator it = begin();
     while(it != end()){
-        std::cout << "it: " << it.currentNode->item << std::endl;
+        std::cout << it.currentNode->item << std::endl;
         it++;
     }
     /*it++;
