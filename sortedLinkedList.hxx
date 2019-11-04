@@ -124,7 +124,7 @@ public:
     }
     int size();
     void remove(T item);
-    /*static SortedLinkedList merge(const SortedLinkedList& a, const SortedLinkedList& b);*/
+    static SortedLinkedList merge(SortedLinkedList& a, SortedLinkedList& b);
     void unique();
     void print();
 };
@@ -311,6 +311,70 @@ void SortedLinkedList<T>::unique() {
         }
         it++;
     }
+}
+
+template<typename T>
+SortedLinkedList<T> SortedLinkedList<T>::merge(SortedLinkedList &a, SortedLinkedList &b) {
+    SortedLinkedList<T>* mergedList = new SortedLinkedList<T>();
+
+    Iterator it_a = a.begin();
+    Iterator it_b = b.begin();
+    mergedList->length = a.length + b.length;
+    Iterator i_m = mergedList->begin();
+    int i = 0;
+
+    while(i < mergedList->length) {
+
+
+
+        i++;
+    }
+
+    /*while(tmp < mergedList->length){
+        if(tmp == a.length){             //jezeli cala lista a zostala juz wykorzystana
+            //mergedArray.arr[im] = b.arr[ib];
+            //ib++;
+        }
+
+        else if(ib == b.length){        //jezeli cala lista b zostala juz wykorzystana
+            mergedArray.arr[im] = a.arr[ia];
+            ia++;
+        }
+
+        else if(a.arr[ia] <= b.arr[ib]){
+            mergedArray.arr[im] = a.arr[ia];
+            ia++;
+        }
+        else{
+            mergedArray.arr[im] = b.arr[ib];
+            ib++;
+        }
+        tmp++;
+    }*/
+
+    /*while(it_a != a.end()){
+        if(it_a.currentNode->item <= it_b.currentNode->item){
+            mergedList->insert(i_m, it_a.currentNode->item);
+            it_a++;
+        }
+        else{
+            mergedList->insert(i_m, it_b.currentNode->item);
+            it_b++;
+        }
+    }
+
+    while(it_b != b.end()){
+        if(it_a.currentNode->item <= it_b.currentNode->item){
+            mergedList->insert(i_m, it_a.currentNode->item);
+            it_a++;
+        }
+        else{
+            mergedList->insert(i_m, it_b.currentNode->item);
+            it_b++;
+        }
+    }*/
+
+    return *mergedList;
 }
 
 #endif //ALGORYTMYISTRUKTURYDANYCH_SortedLinkedList_H

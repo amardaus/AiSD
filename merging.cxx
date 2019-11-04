@@ -5,8 +5,9 @@
 #include <random>
 #include <list>
 #include "sortedArrayList.hxx"
+#include "sortedLinkedList.hxx"
 
-/*int main(){
+int main(){
     int n;
     int tmp;
 
@@ -27,13 +28,15 @@
 
     SortedArrayList<int>* l1_arr = new SortedArrayList<int>();
     SortedArrayList<int>* l2_arr = new SortedArrayList<int>();
+    SortedLinkedList<int>* l1_ptr = new SortedLinkedList<int>();
+    SortedLinkedList<int>* l2_ptr = new SortedLinkedList<int>();
     std::list<int> l1_std_list;
     std::list<int> l2_std_list;
-
 
     for (int n = 0; n < l1_size; ++n) {
         tmp = data_gen(gen);
         l1_arr->push(tmp);
+        l2_ptr->push(tmp);
         l1_std_list.insert(std::lower_bound(l1_std_list.begin(), l1_std_list.end(), tmp), tmp);
     }
 
@@ -49,6 +52,7 @@
     for (int n = 0; n < l2_size; ++n) {
         tmp = data_gen(gen);
         l2_arr->push(tmp);
+        l2_ptr->push(tmp);
         l2_std_list.insert(std::lower_bound(l2_std_list.begin(), l2_std_list.end(), tmp), tmp);
     }
     std::cout << "\nstd l2: ";
@@ -67,6 +71,11 @@
     mergedArray.unique();
     mergedArray.print();
 
+
+    SortedLinkedList<int> sortedLinkedList = SortedLinkedList<int>::merge(*l1_ptr, *l2_ptr);
+
+
+
     std::cout << "std merged: ";
     l1_std_list.merge(l2_std_list);
     for (int x : l1_std_list) {
@@ -81,4 +90,4 @@
 
 
     //dodac jeszcze linkedlist!
-}*/
+}

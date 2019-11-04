@@ -13,6 +13,42 @@ constexpr int N = 50000;
 
 template <typename T>
 class SortedArrayList {
+
+    class Iterator
+    {
+        SortedArrayList* data;
+        int index;
+        friend class Array;
+    public:
+        Iterator(SortedArrayList* arr,int size): data(arr),index(size) { }
+        const T& operator*() const
+        {
+            return data->arr[index];
+        }
+        Iterator operator++(int)
+        {
+            Iterator temp = *this;
+            ++*this;
+            return temp;
+        }
+        Iterator& operator++()
+        {
+            ++index;
+            return *this;
+        }
+        friend bool operator==(const Iterator& rhs,const Iterator& lhs)
+        {
+            return rhs.index == lhs.index;
+        }
+        friend bool operator!=(const Iterator& rhs, const Iterator& lhs)
+        {
+            return rhs.index != lhs.index;
+        }
+    };
+
+    Iterator begin(){ return Iterator(this,0); }
+    Iterator end(){ return Iterator(this,length); }
+
 private:
     int length;
     T* arr;
@@ -184,10 +220,14 @@ void SortedArrayList<T>::unique() {
 
 template<typename T>
 void SortedArrayList<T>::print() {
-    for(int j = 0; j < length; j++){
-        std::cout << arr[j] << ' ';
+
+    Iterator* it = new Iterator(this, length);
+    Iterator iterator = begin();
+    while(iterator != end()){
+        std::cout << *iterator << std::endl;
+        iterator++;
     }
-    std::cout << std::endl;
+
 }
 
 #endif //ALGORYTMYISTRUKTURYDANYCH_SORTEDARRAYLIST_H

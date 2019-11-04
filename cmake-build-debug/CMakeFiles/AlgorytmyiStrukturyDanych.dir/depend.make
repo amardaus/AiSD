@@ -7,6 +7,7 @@ CMakeFiles/AlgorytmyiStrukturyDanych.dir/main.cpp.o: ../sortedLinkedList.hxx
 
 CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.o: ../merging.cxx
 CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.o: ../sortedArrayList.hxx
+CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.o: ../sortedLinkedList.hxx
 
 CMakeFiles/AlgorytmyiStrukturyDanych.dir/sortAddRemove.cxx.o: ../sortAddRemove.cxx
 CMakeFiles/AlgorytmyiStrukturyDanych.dir/sortAddRemove.cxx.o: ../sortedArrayList.hxx
