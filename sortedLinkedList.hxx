@@ -100,13 +100,14 @@ private:
 
 public:
     SortedLinkedList(){
-        guard = new Node;
+        guard = new Node();
         guard->next = guard;
         guard->prev = guard;
         length = 0;
     }
 
-    void push(T item);
+    template<typename U>
+    void push(U&& item);
     T pop();
     T erase(Iterator it);
     Iterator find(T item){
@@ -130,11 +131,11 @@ public:
 };
 
 
-
 template<typename T>
-void SortedLinkedList<T>::push(T item) {
+template<typename U>
+void SortedLinkedList<T>::push(U&& item) {
     Node *node = new Node();
-    node->item = item;
+    node->item = std::forward<U>(item);
 
     Iterator it = begin();
     //std::cout << "guard->prev_item=: " << guard->prev->item << std::endl;
@@ -268,28 +269,17 @@ void SortedLinkedList<T>::remove(T item) {
                 delete first;
                 length--;
 
-                std::cout << "poczatek!";
             }
             else if(it == guard->next){
-                std::cout << "koniec!";
                 it++;
             }
             else{
-                //std::cout << "srodek" << std::endl;
                 Node* node = it.currentNode;
-                //it++;
                 Node* prev = node->prev;
                 Node* next = node->next;
-                //std::cout << "prev: "  << prev->item << std::endl;
-                //std::cout << "node: " << node->item << std::endl;
-                //std::cout << "next" << next->item << std::endl;
 
                 prev->next = next;
                 next->prev = prev;
-                //node->prev->next = it.currentNode;
-                //it.currentNode->prev = node->prev;
-                //node->prev = nullptr;
-                //node->next = nullptr;
                 length--;
                 delete node;
                 it = next;
@@ -376,5 +366,6 @@ SortedLinkedList<T> SortedLinkedList<T>::merge(SortedLinkedList &a, SortedLinked
 
     return *mergedList;
 }
+
 
 #endif //ALGORYTMYISTRUKTURYDANYCH_SortedLinkedList_H

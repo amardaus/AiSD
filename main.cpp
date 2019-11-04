@@ -2,7 +2,7 @@
 #include "sortedArrayList.hxx"
 #include "sortedLinkedList.hxx"
 
-/*int main() {
+int main() {
     SortedArrayList<int>* sortedArrayList = new SortedArrayList<int>();
     SortedArrayList<int>* sortedArrayList2 = new SortedArrayList<int>();
     sortedArrayList->push(222);
@@ -11,7 +11,7 @@
 
 
 
-    sortedArrayList->unique();
+    //sortedArrayList->unique();
     sortedArrayList->print();
 
     /*SortedArrayList<int> mergedArray = SortedArrayList<int>::merge(*sortedArrayList, *sortedArrayList2);
@@ -28,12 +28,14 @@
     sortedLinkedList->push(200);
 
 
-    mergedList = mergedList->merge(sortedLinkedList, *sortedLinkedList2);
-    mergedList->print();
+    sortedLinkedList->print();
+
+    //mergedList = mergedList->merge(sortedLinkedList, sortedLinkedList2);
+    //mergedList->print();
 
 
     //std::cout << "found: " << sortedLinkedList->find(500).currentNode->item << std::endl;
-    //sortedLinkedList->erase(sortedLinkedList->find(300));
+    //sortedLinkedList->erase(sortedLinkedList->find(300));*/
 
     return 0;
-}*/
+}

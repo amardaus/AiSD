@@ -7,7 +7,7 @@
 #include "sortedArrayList.hxx"
 #include "sortedLinkedList.hxx"
 
-int main(){
+/*int main(){
     int n;
     int tmp;
 
@@ -32,6 +32,7 @@ int main(){
     SortedLinkedList<int>* l2_ptr = new SortedLinkedList<int>();
     std::list<int> l1_std_list;
     std::list<int> l2_std_list;
+
 
     for (int n = 0; n < l1_size; ++n) {
         tmp = data_gen(gen);
@@ -90,4 +91,4 @@ int main(){
 
 
     //dodac jeszcze linkedlist!
-}
+}*/

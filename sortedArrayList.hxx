@@ -59,7 +59,8 @@ public:
         length = 0;
     };
 
-    void push(T item);
+    template<typename U>
+    void push(U&& item);
     T pop();
     T erase(position_t index);
     position_t find(T item);
@@ -71,12 +72,13 @@ public:
 };
 
 template<typename T>
-void SortedArrayList<T>::push(T item) {
+template <typename U>
+void SortedArrayList<T>::push(U&& item) {
     if(length == N){
         std::cout << "Lista jest pelna, nie mozna wstawic elementu. " << std::endl;
     }
     else if(length == 0){
-        arr[0] = item;
+        arr[0] = std::forward<U>(item);
         length++;
     }
     else{
@@ -91,7 +93,7 @@ void SortedArrayList<T>::push(T item) {
             }
         }
 
-        arr[index+1] = item;
+        arr[index+1] = std::forward<U>(item);
         length++;
     }
 }
