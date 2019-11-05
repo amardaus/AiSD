@@ -13,6 +13,10 @@ class SortedLinkedList {
         Node* next;
     };
 
+    private:
+        Node* guard;
+        int length;
+
     class Iterator{
     public:
         Node* currentNode;
@@ -51,10 +55,11 @@ class SortedLinkedList {
         }
     };
 
-    Iterator begin(){
+public:
+    Iterator begin() const{
         return Iterator(guard->prev);
     }
-    Iterator end(){
+    Iterator end() const{
         return Iterator(guard);
     }
 
@@ -101,20 +106,9 @@ class SortedLinkedList {
             }
         }
 
-        /*it.currentNode->prev->next = node;
-        it.currentNode->prev = node;
-        node->prev = it.currentNode->prev;
-        node->next = it.currentNode;*/
-
         length++;
 
         return it;
-        /*it.currentNode->prev->next = node;
-        it.currentNode->prev = node;
-        node->prev = it.currentNode->prev;
-        node->next = it.currentNode;
-
-        return it;*/
     }
 
     Iterator erase_it(Iterator it){
@@ -141,9 +135,7 @@ class SortedLinkedList {
         return it;
     }
 
-private:
-    Node* guard;
-    int length;
+
 
 public:
     SortedLinkedList(){
@@ -378,9 +370,6 @@ SortedLinkedList<int> *SortedLinkedList<T>::merge(SortedLinkedList &a, SortedLin
         }
         i_m++;
         len--;
-        std::cout << "p: " << i_m.currentNode->prev->item << " ";
-        std::cout << "item: " << i_m.currentNode->item << " ";
-        std::cout << "n: " << i_m.currentNode->next->item << " " << std::endl;
     }
 
     return mergedList;

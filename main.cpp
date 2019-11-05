@@ -36,6 +36,8 @@ int main() {
     mergedList = mergedList->merge(*sortedLinkedList, *sortedLinkedList2);
     mergedList->print();
 
+    for(const auto& a : *mergedList)
+        std::cout << "item:" << a << std::endl;
 
     //std::cout << "found: " << sortedLinkedList->find(500).currentNode->item << std::endl;
     //sortedLinkedList->erase(sortedLinkedList->find(300));*/
