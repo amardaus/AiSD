@@ -46,14 +46,14 @@ class SortedArrayList {
         }
     };
 
-    Iterator begin(){ return Iterator(this,0); }
-    Iterator end(){ return Iterator(this,length); }
-
 private:
     int length;
     T* arr;
 
 public:
+    Iterator begin(){ return Iterator(this,0); }
+    Iterator end(){ return Iterator(this,length); }
+
     SortedArrayList(){
         arr = new int[N];
         length = 0;

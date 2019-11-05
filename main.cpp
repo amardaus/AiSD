@@ -3,11 +3,14 @@
 #include "sortedLinkedList.hxx"
 
 int main() {
-    /*SortedArrayList<int>* sortedArrayList = new SortedArrayList<int>();
+    SortedArrayList<int>* sortedArrayList = new SortedArrayList<int>();
     SortedArrayList<int>* sortedArrayList2 = new SortedArrayList<int>();
     sortedArrayList->push(222);
     sortedArrayList->push(111);
     sortedArrayList->push(333);
+    for(const auto& a : *sortedArrayList){
+        std::cout << "item:" << a << std::endl;
+    }
 
 
 
