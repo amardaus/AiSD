@@ -123,6 +123,33 @@ AlgorytmyiStrukturyDanych/fast:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/build
 .PHONY : AlgorytmyiStrukturyDanych/fast
 
+generateInput.o: generateInput.cxx.o
+
+.PHONY : generateInput.o
+
+# target to build an object file
+generateInput.cxx.o:
+	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/generateInput.cxx.o
+.PHONY : generateInput.cxx.o
+
+generateInput.i: generateInput.cxx.i
+
+.PHONY : generateInput.i
+
+# target to preprocess a source file
+generateInput.cxx.i:
+	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/generateInput.cxx.i
+.PHONY : generateInput.cxx.i
+
+generateInput.s: generateInput.cxx.s
+
+.PHONY : generateInput.s
+
+# target to generate assembly for a file
+generateInput.cxx.s:
+	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/generateInput.cxx.s
+.PHONY : generateInput.cxx.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... AlgorytmyiStrukturyDanych"
 	@echo "... edit_cache"
+	@echo "... generateInput.o"
+	@echo "... generateInput.i"
+	@echo "... generateInput.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

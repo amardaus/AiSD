@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/generateInput.cxx">
+			<Option target="AlgorytmyiStrukturyDanych"/>
+		</Unit>
 		<Unit filename="/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/main.cpp">
 			<Option target="AlgorytmyiStrukturyDanych"/>
 		</Unit>

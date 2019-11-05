@@ -3,4 +3,4 @@ project(AlgorytmyiStrukturyDanych)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(AlgorytmyiStrukturyDanych main.cpp sortedArrayList.hxx sortedLinkedList.hxx merging.cxx sortAddRemove.cxx)
+add_executable(AlgorytmyiStrukturyDanych main.cpp sortedArrayList.hxx sortedLinkedList.hxx merging.cxx sortAddRemove.cxx generateInput.cxx)

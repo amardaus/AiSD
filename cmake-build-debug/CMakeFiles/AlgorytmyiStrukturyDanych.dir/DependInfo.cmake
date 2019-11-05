@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/generateInput.cxx" "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/AlgorytmyiStrukturyDanych.dir/generateInput.cxx.o"
   "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/main.cpp" "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/AlgorytmyiStrukturyDanych.dir/main.cpp.o"
   "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/merging.cxx" "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.o"
   "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/sortAddRemove.cxx" "/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/AlgorytmyiStrukturyDanych.dir/sortAddRemove.cxx.o"

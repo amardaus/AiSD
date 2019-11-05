@@ -58,16 +58,63 @@ class SortedLinkedList {
         return Iterator(guard);
     }
 
-    Iterator insert(Iterator it, const T& item){
+    Iterator insert(Iterator it, T& item){
         Node* node = new Node();
         node->item = item;
 
-        it.currentNode->prev->next = node;
+
+        if (guard->prev == guard && guard->next == guard)//lista pusta
+        {
+            guard->prev = node;
+            guard->next = node;
+            node->prev = guard;
+            node->next = guard;
+        }
+
+        else if (guard->prev->item >= item)  //na poczatku listy
+        {
+            it.currentNode->prev = node;
+            node->prev = guard;
+            node->next = it.currentNode;
+            guard->prev = node;
+        }
+
+        else
+        {
+            while (it.currentNode->next != guard && it.currentNode->next->item < item) {
+                it++;
+            }
+
+            if(it.currentNode->next == guard){
+                it.currentNode->next = node;
+                node->next = guard;
+                node->prev = it.currentNode;
+                guard->next = node;
+                //std::cout << "[end]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
+            }
+            else{
+                node->next = it.currentNode->next;
+                node->prev = it.currentNode;
+                it.currentNode->next->prev = node;
+                it.currentNode->next = node;
+                //std::cout << "[mid]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
+            }
+        }
+
+        /*it.currentNode->prev->next = node;
+        it.currentNode->prev = node;
+        node->prev = it.currentNode->prev;
+        node->next = it.currentNode;*/
+
+        length++;
+
+        return it;
+        /*it.currentNode->prev->next = node;
         it.currentNode->prev = node;
         node->prev = it.currentNode->prev;
         node->next = it.currentNode;
 
-        return it;
+        return it;*/
     }
 
     Iterator erase_it(Iterator it){
@@ -125,7 +172,7 @@ public:
     }
     int size();
     void remove(T item);
-    static SortedLinkedList merge(SortedLinkedList& a, SortedLinkedList& b);
+    static SortedLinkedList<int>* merge(SortedLinkedList& a, SortedLinkedList& b);
     void unique();
     void print();
 };
@@ -241,9 +288,9 @@ void SortedLinkedList<T>::print() {
     /*it=begin();
     it++;
     insert(it, 500);
-    length++;*/
+    length++;
 
-    /*it = begin();
+    it = begin();
     while(it != end()){
         std::cout << it.currentNode->item << " ";
         it++;
@@ -304,46 +351,24 @@ void SortedLinkedList<T>::unique() {
 }
 
 template<typename T>
-SortedLinkedList<T> SortedLinkedList<T>::merge(SortedLinkedList &a, SortedLinkedList &b) {
+SortedLinkedList<int> *SortedLinkedList<T>::merge(SortedLinkedList &a, SortedLinkedList &b) {
     SortedLinkedList<T>* mergedList = new SortedLinkedList<T>();
 
     Iterator it_a = a.begin();
     Iterator it_b = b.begin();
-    mergedList->length = a.length + b.length;
+    int len = a.length + b.length;
     Iterator i_m = mergedList->begin();
-    int i = 0;
 
-    while(i < mergedList->length) {
-
-
-
-        i++;
-    }
-
-    /*while(tmp < mergedList->length){
-        if(tmp == a.length){             //jezeli cala lista a zostala juz wykorzystana
-            //mergedArray.arr[im] = b.arr[ib];
-            //ib++;
+    while(len > 0) {
+        if(it_a == a.end()){
+            mergedList->insert(i_m, it_b.currentNode->item);
+            it_b++;
         }
-
-        else if(ib == b.length){        //jezeli cala lista b zostala juz wykorzystana
-            mergedArray.arr[im] = a.arr[ia];
-            ia++;
+        else if(it_b == b.end()){
+            mergedList->insert(i_m, it_a.currentNode->item);
+            it_a++;
         }
-
-        else if(a.arr[ia] <= b.arr[ib]){
-            mergedArray.arr[im] = a.arr[ia];
-            ia++;
-        }
-        else{
-            mergedArray.arr[im] = b.arr[ib];
-            ib++;
-        }
-        tmp++;
-    }*/
-
-    /*while(it_a != a.end()){
-        if(it_a.currentNode->item <= it_b.currentNode->item){
+        else if(it_a.currentNode->item < it_b.currentNode->item){
             mergedList->insert(i_m, it_a.currentNode->item);
             it_a++;
         }
@@ -351,20 +376,14 @@ SortedLinkedList<T> SortedLinkedList<T>::merge(SortedLinkedList &a, SortedLinked
             mergedList->insert(i_m, it_b.currentNode->item);
             it_b++;
         }
+        i_m++;
+        len--;
+        std::cout << "p: " << i_m.currentNode->prev->item << " ";
+        std::cout << "item: " << i_m.currentNode->item << " ";
+        std::cout << "n: " << i_m.currentNode->next->item << " " << std::endl;
     }
 
-    while(it_b != b.end()){
-        if(it_a.currentNode->item <= it_b.currentNode->item){
-            mergedList->insert(i_m, it_a.currentNode->item);
-            it_a++;
-        }
-        else{
-            mergedList->insert(i_m, it_b.currentNode->item);
-            it_b++;
-        }
-    }*/
-
-    return *mergedList;
+    return mergedList;
 }
 
 
