@@ -179,7 +179,8 @@ SortedArrayList<T> SortedArrayList<T>::merge(const SortedArrayList &a, const Sor
             ib++;
         }
 
-        else if(ib == b.length){        //jezeli cala lista b zostala juz wykorzystana
+        else if(ib == b.length){        //
+            // jezeli cala lista b zostala juz wykorzystana
             mergedArray.arr[im] = a.arr[ia];
             ia++;
         }

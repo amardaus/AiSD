@@ -57,7 +57,7 @@ class SortedLinkedList {
 
 public:
     Iterator begin() const{
-        return Iterator(guard->prev);
+        return Iterator(guard->next);
     }
     Iterator end() const{
         return Iterator(guard);
@@ -177,6 +177,24 @@ void SortedLinkedList<T>::push(U&& item) {
     node->item = std::forward<U>(item);
 
     Iterator it = begin();
+    while (it.currentNode != guard && it.currentNode->item < item) {
+        it++;
+    }
+    //std::cout << "inserting: " << it.currentNode->item << std::endl;
+
+    node->prev = it.currentNode->prev;
+    node->next = it.currentNode;
+    it.currentNode->prev->next = node;
+    it.currentNode->prev = node;
+
+    length++;
+
+    //std::cout << "item: " << node->item << " prev: " << node->prev->item << " next: " << node->next->item << std::endl;
+
+
+
+
+    /*Iterator it = begin();
     //std::cout << "guard->prev_item=: " << guard->prev->item << std::endl;
     if (guard->prev == guard && guard->next == guard)//lista pusta
     {
@@ -217,7 +235,7 @@ void SortedLinkedList<T>::push(U&& item) {
             //std::cout << "[mid]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
         }
     }
-    length++;
+    length++;*/
 }
 
 template<typename T>
@@ -266,7 +284,7 @@ template<typename T>
 void SortedLinkedList<T>::print() {
     Iterator it = begin();
     while(it != end()){
-        std::cout << it.currentNode->item << " ";
+        std::cout << it.currentNode->item << "-";
         it++;
     }
     std::cout << std::endl;
