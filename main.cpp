@@ -30,8 +30,11 @@ int main() {
 
     sortedLinkedList->push(100);
     sortedLinkedList->push(200);
-
+    sortedLinkedList->push(200);
     sortedLinkedList->push(300);
+    sortedLinkedList->push(300);
+
+    sortedLinkedList->unique();
 
     sortedLinkedList->print();
     //sortedLinkedList2->print();

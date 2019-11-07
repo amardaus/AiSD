@@ -63,76 +63,29 @@ public:
         return Iterator(guard);
     }
 
-    Iterator insert(Iterator it, T& item){
+    Iterator insert(Iterator it, T&& item){
         Node* node = new Node();
-        node->item = item;
+        node->item = std::forward<T>(item);
 
-
-        if (guard->prev == guard && guard->next == guard)//lista pusta
-        {
-            guard->prev = node;
-            guard->next = node;
-            node->prev = guard;
-            node->next = guard;
-        }
-
-        else if (guard->prev->item >= item)  //na poczatku listy
-        {
-            it.currentNode->prev = node;
-            node->prev = guard;
-            node->next = it.currentNode;
-            guard->prev = node;
-        }
-
-        else
-        {
-            while (it.currentNode->next != guard && it.currentNode->next->item < item) {
-                it++;
-            }
-
-            if(it.currentNode->next == guard){
-                it.currentNode->next = node;
-                node->next = guard;
-                node->prev = it.currentNode;
-                guard->next = node;
-                //std::cout << "[end]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
-            }
-            else{
-                node->next = it.currentNode->next;
-                node->prev = it.currentNode;
-                it.currentNode->next->prev = node;
-                it.currentNode->next = node;
-                //std::cout << "[mid]INSERTING: " << node->item << "; prev = " << node->prev->item << "; next= " << node->next->item << std::endl;
-            }
-        }
-
+        node->prev = it.currentNode->prev;
+        node->next = it.currentNode;
+        it.currentNode->prev->next = node;
+        it.currentNode->prev = node;
         length++;
-
         return it;
     }
 
     Iterator erase_it(Iterator it){
-        Node* node;
+        T value;
+        Node* node = it.currentNode;
+        value = it.currentNode->item;
 
-        if(it == begin()){
-            node = guard->prev;
-            guard->prev = node->next;
-        }
-        else if(it == end().currentNode->next){
-            node = guard->next;
-            node->prev->next = guard;
-            guard->next = node->prev;
-        }
-        else{
-            node = it.currentNode;
-            node->prev->next = node->next;
-            node->next->prev = node->prev;
-        }
-        it++;
-        length--;
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
+
         delete node;
-
-        return it;
+        length--;
+        return node->next;
     }
 
 
@@ -207,31 +160,27 @@ T SortedLinkedList<T>::pop() {
 
 template<typename T>
 T SortedLinkedList<T>::erase(Iterator it) {
-    Node* node;
+    T value;
+    Node* node = it.currentNode;
+    value = it.currentNode->item;
 
-    if(it == begin()){
-        node = guard->prev;
-        guard->prev = node->next;
-    }
-    else if(it == end().currentNode->next){
-        node = guard->next;
-        node->prev->next = guard;
-        guard->next = node->prev;
-    }
-    else{
-        node = it.currentNode;
-        node->prev->next = node->next;
-        node->next->prev = node->prev;
-    }
-    length--;
+    node->prev->next = node->next;
+    node->next->prev = node->prev;
+
     delete node;
-
-    return -1;
+    length--;
+    return value;
 }
 
 template<typename T>
 void SortedLinkedList<T>::print() {
+    /*Iterator it = begin();
+    it++;
+    erase(it);*/
+
     Iterator it = begin();
+    it = begin();
+
     while(it != end()){
         std::cout << it.currentNode->item << " ";
         it++;
@@ -239,17 +188,14 @@ void SortedLinkedList<T>::print() {
     std::cout << std::endl;
 
 
-    /*it=begin();
-    it++;
-    erase_it(it);
-    length--;*/
 
-    /*it=begin();
+    /*Iterator it = begin();
+    it=begin();
     it++;
     insert(it, 500);
-    length++;
+    length++;*/
 
-    it = begin();
+    /*it = begin();
     while(it != end()){
         std::cout << it.currentNode->item << " ";
         it++;
@@ -263,46 +209,26 @@ int SortedLinkedList<T>::size() {
 
 template<typename T>
 void SortedLinkedList<T>::remove(T item) {
+
     Iterator it = begin();
     while(it != end()){
         if(it.currentNode->item == item){
-            if(it == guard->prev){
-                it++;
-                Node *first = guard->prev;
-                guard->prev = first->next;
-                first->prev = nullptr;
-                first->next = nullptr;
-                delete first;
-                length--;
-
-            }
-            else if(it == guard->next){
-                it++;
-            }
-            else{
-                Node* node = it.currentNode;
-                Node* prev = node->prev;
-                Node* next = node->next;
-
-                prev->next = next;
-                next->prev = prev;
-                length--;
-                delete node;
-                it = next;
-            }
+            Node* node = it.currentNode;
+            node->prev->next = node->next;
+            node->next->prev = node->prev;
+            delete node;
+            length--;
+            break;
         }
-        else{
-            it++;
-        }
+        it++;
     }
 }
 
 template<typename T>
 void SortedLinkedList<T>::unique() {
     Iterator it = begin();
-    while(it != end().currentNode->next){
+    while(it != end().currentNode){
         if(it.currentNode->item == it.currentNode->next->item){
-            //std::cout << "znaleziono duplikat: " << it.currentNode->item << std::endl;
             erase_it(it.currentNode->next);
         }
         it++;
