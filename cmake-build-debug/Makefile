@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named generateInput
+
+# Build rule for target.
+generateInput: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generateInput
+.PHONY : generateInput
+
+# fast build rule for target.
+generateInput/fast:
+	$(MAKE) -f CMakeFiles/generateInput.dir/build.make CMakeFiles/generateInput.dir/build
+.PHONY : generateInput/fast
+
+#=============================================================================
 # Target rules for targets named AlgorytmyiStrukturyDanych
 
 # Build rule for target.
@@ -123,12 +136,52 @@ AlgorytmyiStrukturyDanych/fast:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/build
 .PHONY : AlgorytmyiStrukturyDanych/fast
 
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named sortAddRemove
+
+# Build rule for target.
+sortAddRemove: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sortAddRemove
+.PHONY : sortAddRemove
+
+# fast build rule for target.
+sortAddRemove/fast:
+	$(MAKE) -f CMakeFiles/sortAddRemove.dir/build.make CMakeFiles/sortAddRemove.dir/build
+.PHONY : sortAddRemove/fast
+
+#=============================================================================
+# Target rules for targets named merging
+
+# Build rule for target.
+merging: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 merging
+.PHONY : merging
+
+# fast build rule for target.
+merging/fast:
+	$(MAKE) -f CMakeFiles/merging.dir/build.make CMakeFiles/merging.dir/build
+.PHONY : merging/fast
+
 generateInput.o: generateInput.cxx.o
 
 .PHONY : generateInput.o
 
 # target to build an object file
 generateInput.cxx.o:
+	$(MAKE) -f CMakeFiles/generateInput.dir/build.make CMakeFiles/generateInput.dir/generateInput.cxx.o
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/generateInput.cxx.o
 .PHONY : generateInput.cxx.o
 
@@ -138,6 +191,7 @@ generateInput.i: generateInput.cxx.i
 
 # target to preprocess a source file
 generateInput.cxx.i:
+	$(MAKE) -f CMakeFiles/generateInput.dir/build.make CMakeFiles/generateInput.dir/generateInput.cxx.i
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/generateInput.cxx.i
 .PHONY : generateInput.cxx.i
 
@@ -147,6 +201,7 @@ generateInput.s: generateInput.cxx.s
 
 # target to generate assembly for a file
 generateInput.cxx.s:
+	$(MAKE) -f CMakeFiles/generateInput.dir/build.make CMakeFiles/generateInput.dir/generateInput.cxx.s
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/generateInput.cxx.s
 .PHONY : generateInput.cxx.s
 
@@ -157,6 +212,7 @@ main.o: main.cpp.o
 # target to build an object file
 main.cpp.o:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -166,6 +222,7 @@ main.i: main.cpp.i
 # target to preprocess a source file
 main.cpp.i:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -175,6 +232,7 @@ main.s: main.cpp.s
 # target to generate assembly for a file
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 merging.o: merging.cxx.o
@@ -184,6 +242,7 @@ merging.o: merging.cxx.o
 # target to build an object file
 merging.cxx.o:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.o
+	$(MAKE) -f CMakeFiles/merging.dir/build.make CMakeFiles/merging.dir/merging.cxx.o
 .PHONY : merging.cxx.o
 
 merging.i: merging.cxx.i
@@ -193,6 +252,7 @@ merging.i: merging.cxx.i
 # target to preprocess a source file
 merging.cxx.i:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.i
+	$(MAKE) -f CMakeFiles/merging.dir/build.make CMakeFiles/merging.dir/merging.cxx.i
 .PHONY : merging.cxx.i
 
 merging.s: merging.cxx.s
@@ -202,6 +262,7 @@ merging.s: merging.cxx.s
 # target to generate assembly for a file
 merging.cxx.s:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/merging.cxx.s
+	$(MAKE) -f CMakeFiles/merging.dir/build.make CMakeFiles/merging.dir/merging.cxx.s
 .PHONY : merging.cxx.s
 
 sortAddRemove.o: sortAddRemove.cxx.o
@@ -211,6 +272,7 @@ sortAddRemove.o: sortAddRemove.cxx.o
 # target to build an object file
 sortAddRemove.cxx.o:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/sortAddRemove.cxx.o
+	$(MAKE) -f CMakeFiles/sortAddRemove.dir/build.make CMakeFiles/sortAddRemove.dir/sortAddRemove.cxx.o
 .PHONY : sortAddRemove.cxx.o
 
 sortAddRemove.i: sortAddRemove.cxx.i
@@ -220,6 +282,7 @@ sortAddRemove.i: sortAddRemove.cxx.i
 # target to preprocess a source file
 sortAddRemove.cxx.i:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/sortAddRemove.cxx.i
+	$(MAKE) -f CMakeFiles/sortAddRemove.dir/build.make CMakeFiles/sortAddRemove.dir/sortAddRemove.cxx.i
 .PHONY : sortAddRemove.cxx.i
 
 sortAddRemove.s: sortAddRemove.cxx.s
@@ -229,6 +292,7 @@ sortAddRemove.s: sortAddRemove.cxx.s
 # target to generate assembly for a file
 sortAddRemove.cxx.s:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/sortAddRemove.cxx.s
+	$(MAKE) -f CMakeFiles/sortAddRemove.dir/build.make CMakeFiles/sortAddRemove.dir/sortAddRemove.cxx.s
 .PHONY : sortAddRemove.cxx.s
 
 # Help Target
@@ -238,8 +302,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... generateInput"
 	@echo "... AlgorytmyiStrukturyDanych"
+	@echo "... main"
+	@echo "... sortAddRemove"
 	@echo "... edit_cache"
+	@echo "... merging"
 	@echo "... generateInput.o"
 	@echo "... generateInput.i"
 	@echo "... generateInput.s"

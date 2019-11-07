@@ -1,3 +1,7 @@
 /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/generateInput.dir
 /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/AlgorytmyiStrukturyDanych.dir
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/main.dir
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/sortAddRemove.dir
 /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles/merging.dir

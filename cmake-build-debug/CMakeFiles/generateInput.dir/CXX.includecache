@@ -7,4 +7,10 @@
 #IncludeRegexTransform: 
 
 /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/generateInput.cxx
+random
+-
+iostream
+-
+bits/stdc++.h
+-
 

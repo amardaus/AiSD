@@ -48,5 +48,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/generateInput.dir/DependInfo.cmake"
   "CMakeFiles/AlgorytmyiStrukturyDanych.dir/DependInfo.cmake"
+  "CMakeFiles/main.dir/DependInfo.cmake"
+  "CMakeFiles/sortAddRemove.dir/DependInfo.cmake"
+  "CMakeFiles/merging.dir/DependInfo.cmake"
   )

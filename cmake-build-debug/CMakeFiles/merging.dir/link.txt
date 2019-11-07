@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/merging.dir/merging.cxx.o  -o merging 

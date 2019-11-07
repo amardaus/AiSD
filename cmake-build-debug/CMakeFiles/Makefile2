@@ -53,12 +53,20 @@ CMAKE_BINARY_DIR = /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/generateInput.dir/all
 all: CMakeFiles/AlgorytmyiStrukturyDanych.dir/all
+all: CMakeFiles/main.dir/all
+all: CMakeFiles/sortAddRemove.dir/all
+all: CMakeFiles/merging.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
+clean: CMakeFiles/generateInput.dir/clean
 clean: CMakeFiles/AlgorytmyiStrukturyDanych.dir/clean
+clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/sortAddRemove.dir/clean
+clean: CMakeFiles/merging.dir/clean
 
 .PHONY : clean
 
@@ -66,6 +74,33 @@ clean: CMakeFiles/AlgorytmyiStrukturyDanych.dir/clean
 preinstall:
 
 .PHONY : preinstall
+
+#=============================================================================
+# Target rules for target CMakeFiles/generateInput.dir
+
+# All Build rule for target.
+CMakeFiles/generateInput.dir/all:
+	$(MAKE) -f CMakeFiles/generateInput.dir/build.make CMakeFiles/generateInput.dir/depend
+	$(MAKE) -f CMakeFiles/generateInput.dir/build.make CMakeFiles/generateInput.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target generateInput"
+.PHONY : CMakeFiles/generateInput.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/generateInput.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/generateInput.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/generateInput.dir/rule
+
+# Convenience name for target.
+generateInput: CMakeFiles/generateInput.dir/rule
+
+.PHONY : generateInput
+
+# clean rule for target.
+CMakeFiles/generateInput.dir/clean:
+	$(MAKE) -f CMakeFiles/generateInput.dir/build.make CMakeFiles/generateInput.dir/clean
+.PHONY : CMakeFiles/generateInput.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/AlgorytmyiStrukturyDanych.dir
@@ -93,6 +128,87 @@ AlgorytmyiStrukturyDanych: CMakeFiles/AlgorytmyiStrukturyDanych.dir/rule
 CMakeFiles/AlgorytmyiStrukturyDanych.dir/clean:
 	$(MAKE) -f CMakeFiles/AlgorytmyiStrukturyDanych.dir/build.make CMakeFiles/AlgorytmyiStrukturyDanych.dir/clean
 .PHONY : CMakeFiles/AlgorytmyiStrukturyDanych.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main.dir
+
+# All Build rule for target.
+CMakeFiles/main.dir/all:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+CMakeFiles/main.dir/clean:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sortAddRemove.dir
+
+# All Build rule for target.
+CMakeFiles/sortAddRemove.dir/all:
+	$(MAKE) -f CMakeFiles/sortAddRemove.dir/build.make CMakeFiles/sortAddRemove.dir/depend
+	$(MAKE) -f CMakeFiles/sortAddRemove.dir/build.make CMakeFiles/sortAddRemove.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target sortAddRemove"
+.PHONY : CMakeFiles/sortAddRemove.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sortAddRemove.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sortAddRemove.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/sortAddRemove.dir/rule
+
+# Convenience name for target.
+sortAddRemove: CMakeFiles/sortAddRemove.dir/rule
+
+.PHONY : sortAddRemove
+
+# clean rule for target.
+CMakeFiles/sortAddRemove.dir/clean:
+	$(MAKE) -f CMakeFiles/sortAddRemove.dir/build.make CMakeFiles/sortAddRemove.dir/clean
+.PHONY : CMakeFiles/sortAddRemove.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/merging.dir
+
+# All Build rule for target.
+CMakeFiles/merging.dir/all:
+	$(MAKE) -f CMakeFiles/merging.dir/build.make CMakeFiles/merging.dir/depend
+	$(MAKE) -f CMakeFiles/merging.dir/build.make CMakeFiles/merging.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target merging"
+.PHONY : CMakeFiles/merging.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/merging.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/merging.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/olcia/Documents/AlgorytmyiStrukturyDanych/Zestaw1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/merging.dir/rule
+
+# Convenience name for target.
+merging: CMakeFiles/merging.dir/rule
+
+.PHONY : merging
+
+# clean rule for target.
+CMakeFiles/merging.dir/clean:
+	$(MAKE) -f CMakeFiles/merging.dir/build.make CMakeFiles/merging.dir/clean
+.PHONY : CMakeFiles/merging.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

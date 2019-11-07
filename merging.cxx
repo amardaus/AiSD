@@ -7,35 +7,52 @@
 #include "sortedArrayList.hxx"
 #include "sortedLinkedList.hxx"
 
-/*int main(){
-    int n;
-    int tmp;
+int main(){
+    std::ios_base::sync_with_stdio(false);
+    int l1_size, l2_size;
+    int x;
 
-    std::cout << "Podaj calokowity rozmiar list" << std::endl;
-    std::cin >> n;
-    if(!std::cin)
+    //SortedLinkedList<int>* l1_ptr = new SortedLinkedList<int>();
+    //SortedLinkedList<int>* l2_ptr = new SortedLinkedList<int>();
+    //std::list<int> l1_std_list;
+    //std::list<int> l2_std_list;
+
+    std::vector<int> v((std::istream_iterator<int>(std::cin)), std::istream_iterator<int>());
+
+    while(std::cin >> x)
     {
-        std::cout << "Nieprawidlowy rozmiar listy" << std::endl;
+        v.push_back(x);
     }
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> size_gen(1, n);
-    std::uniform_int_distribution<> data_gen(1, n);
+    l1_size = v.at(0);
+    l2_size = v.at(1);
+    v.erase(v.begin(), v.begin()+2);
 
-    int l1_size = size_gen(gen);
-    int l2_size = n - l1_size;
+    for (auto i = v.begin(); i != v.end(); ++i)
+        std::cout << *i << ' ';
+
 
     SortedArrayList<int>* l1_arr = new SortedArrayList<int>();
     SortedArrayList<int>* l2_arr = new SortedArrayList<int>();
-    SortedLinkedList<int>* l1_ptr = new SortedLinkedList<int>();
-    SortedLinkedList<int>* l2_ptr = new SortedLinkedList<int>();
-    std::list<int> l1_std_list;
-    std::list<int> l2_std_list;
+    for(int i = 0; i < l1_size; i++){
+        l1_arr->push(v.at(i));
+    }
+
+    std::cout << "\narrayList1: \n";
+    l1_arr->print();
+
+    for(int i = l1_size; i < l1_size + l2_size; i++){
+        l2_arr->push(v.at(i));
+    }
+    std::cout << "\narrayList2: \n";
+    l2_arr->print();
+
+    std::cout << "\nmergedArrayList: \n";
+    SortedArrayList<int> merged_arr = SortedArrayList<int>::merge(*l1_arr, *l2_arr);
+    merged_arr.print();
 
 
-    for (int n = 0; n < l1_size; ++n) {
-        tmp = data_gen(gen);
+    /*for (int n = 0; n < l1_size; ++n) {
         l1_arr->push(tmp);
         l2_ptr->push(tmp);
         l1_std_list.insert(std::lower_bound(l1_std_list.begin(), l1_std_list.end(), tmp), tmp);
@@ -90,5 +107,6 @@
     }
 
 
-    //dodac jeszcze linkedlist!
-}*/
+    //dodac jeszcze linkedlist!*/
+
+}
