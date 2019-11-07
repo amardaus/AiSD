@@ -27,12 +27,12 @@ int main() {
     SortedLinkedList<int>* sortedLinkedList = new SortedLinkedList<int>();
     SortedLinkedList<int>* sortedLinkedList2 = new SortedLinkedList<int>();
     SortedLinkedList<int>* mergedList = new SortedLinkedList<int>();
-    sortedLinkedList->push(300);
-    sortedLinkedList->push(200);
 
     sortedLinkedList->push(100);
     sortedLinkedList->push(200);
+
     sortedLinkedList->push(300);
+
     sortedLinkedList->print();
     //sortedLinkedList2->print();
 
