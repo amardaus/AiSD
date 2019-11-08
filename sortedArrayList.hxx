@@ -9,7 +9,7 @@
 #include <algorithm>
 
 using position_t = int;
-constexpr int N = 50000;
+constexpr int N = 100000;
 
 template <typename T>
 class SortedArrayList {
@@ -18,10 +18,9 @@ class SortedArrayList {
     {
         SortedArrayList* data;
         int index;
-        friend class Array;
     public:
         Iterator(SortedArrayList* arr,int size): data(arr),index(size) { }
-        const T& operator*() const
+        T& operator*() const
         {
             return data->arr[index];
         }
@@ -96,6 +95,16 @@ void SortedArrayList<T>::push(U&& item) {
         arr[index+1] = std::forward<U>(item);
         length++;
     }
+
+    /*Iterator it = begin();
+
+    while(*it > item && it != end()){
+        //std::cout << "[" << *it << "]" << std::endl;
+        it++;
+    }
+    std::cout << "[" << *it << "]" << std::endl;
+    *it = std::forward<U>(item);
+    length++;*/
 }
 
 template<typename T>

@@ -1,0 +1,19 @@
+n=10000
+arrayList: 0.0672005
+linkedList: 0.242271
+
+n=20000
+arrayList: 0.262585
+linkedList: 1.04416
+
+n=50000
+arrayList: 1.64362
+linkedList: 8.46064
+
+n=100000
+arrayList: 6.63384
+linkedList: 35.4516
+
+n=200000
+arrayList: 25.9414
+linkedList: 210.687

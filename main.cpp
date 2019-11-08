@@ -10,12 +10,12 @@ int main() {
     sortedArrayList->push(333);
     for(const auto& a : *sortedArrayList){
         std::cout << "item:" << a << std::endl;
-    }
+    }*/
 
 
 
     //sortedArrayList->unique();
-    sortedArrayList->print();
+    //sortedArrayList->print();
 
     /*SortedArrayList<int> mergedArray = SortedArrayList<int>::merge(*sortedArrayList, *sortedArrayList2);
     mergedArray.print();
@@ -23,20 +23,21 @@ int main() {
     delete sortedArrayList2;*/
 
 
-
     SortedLinkedList<int>* sortedLinkedList = new SortedLinkedList<int>();
     SortedLinkedList<int>* sortedLinkedList2 = new SortedLinkedList<int>();
     SortedLinkedList<int>* mergedList = new SortedLinkedList<int>();
 
-    sortedLinkedList->push(100);
+    sortedLinkedList->push(500);
     sortedLinkedList->push(200);
-    sortedLinkedList->push(200);
+    sortedLinkedList->push(400);
     sortedLinkedList->push(300);
     sortedLinkedList->push(300);
+    for(const auto& a : *sortedLinkedList)
+        std::cout << "item:" << a << std::endl;
 
-    sortedLinkedList->unique();
+    //sortedLinkedList->unique();
 
-    sortedLinkedList->print();
+    //sortedLinkedList->print();
     //sortedLinkedList2->print();
 
     /*mergedList = mergedList->merge(*sortedLinkedList, *sortedLinkedList2);

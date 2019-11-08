@@ -6,7 +6,7 @@
 #include "sortedArrayList.hxx"
 #include "sortedLinkedList.hxx"
 
-constexpr int n = 50000;
+constexpr int n = 20000;
 
 int main(){
     SortedArrayList<int>* sortedArrayList = new SortedArrayList<int>();

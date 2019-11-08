@@ -29,14 +29,14 @@ class SortedLinkedList {
             this->currentNode = node;
             return *this;
         }
-        Iterator& operator++() {    // Prefix ++ overload
+        Iterator& operator++() {    // prefix ++ overload
             if (currentNode) {
                 currentNode = currentNode->next;
             }
             return *this;
         }
 
-        Iterator operator++(int){ // Postfix ++ overload
+        Iterator operator++(int){ // postfix ++ overload
             Iterator iterator = *this;
             ++*this;
             return iterator;
